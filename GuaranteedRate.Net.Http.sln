@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpService", "HttpService\HttpService.csproj", "{0A9C1897-F948-42B1-9347-BCD07C9F526A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F3F94D3B-AFE4-4771-934E-0FC041EA89DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C369ED12-81F1-47C4-AF38-F3F3A9C2AF3F}"
+	ProjectSection(SolutionItems) = preProject
+		HttpService\HttpService.nuspec = HttpService\HttpService.nuspec
+		HttpService\HttpServicePublish.bat = HttpService\HttpServicePublish.bat
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A9C1897-F948-42B1-9347-BCD07C9F526A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9C1897-F948-42B1-9347-BCD07C9F526A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9C1897-F948-42B1-9347-BCD07C9F526A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9C1897-F948-42B1-9347-BCD07C9F526A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0A9C1897-F948-42B1-9347-BCD07C9F526A} = {F3F94D3B-AFE4-4771-934E-0FC041EA89DE}
+	EndGlobalSection
+EndGlobal
