@@ -7,18 +7,18 @@ namespace GuaranteedRate.Net.Http.HttpService
     using System.Net.Http.Formatting;
     using System.Threading.Tasks;
 
-    public class HttpService : IHttpService
+    public class HttpClient : IHttpClient
     {
         private readonly string _baseUrl;
-        private readonly HttpClient _client;
+        private readonly System.Net.Http.HttpClient _client;
         protected readonly NameValueCollection DefaultRequestHeaders;
 
-        public HttpService(string baseUrl = null, NameValueCollection defaultRequestHeaders = null)
+        public HttpClient(string baseUrl = null, NameValueCollection defaultRequestHeaders = null)
         {
             DefaultRequestHeaders = defaultRequestHeaders ?? new NameValueCollection();
             if (DefaultRequestHeaders.AllKeys.All(key => !key.Equals("Content-Type", StringComparison.InvariantCultureIgnoreCase)))
                 DefaultRequestHeaders.Add("Content-Type", "application/json");
-            _client = new HttpClient();
+            _client = new System.Net.Http.HttpClient();
             _baseUrl = baseUrl ?? string.Empty;
         }
 

@@ -5,7 +5,7 @@
     using System.Net.Http;
     using System.Threading.Tasks;
 
-    public interface IHttpService : IDisposable
+    public interface IHttpClient : IDisposable
     {
         Task<HttpResponseMessage> GetAsync(string url, NameValueCollection headers = null);
         Task<HttpResponseMessage> PostAsync<T>(string url, T body, NameValueCollection headers = null);
