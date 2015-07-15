@@ -31,24 +31,29 @@ namespace GuaranteedRate.Net.Http.HttpService
         public Task<HttpResponseMessage> GetAsync(string url, NameValueCollection headers = null)
         {
             var request = CreateNewRequest(HttpMethod.Get, url, headers);
-            return _client.SendAsync(request);
+            return SendAsync(request);
         }
 
         public Task<HttpResponseMessage> PostAsync<T>(string url, T body, NameValueCollection headers = null)
         {
             var request = CreateNewRequest(HttpMethod.Post, url, headers, body);
-            return _client.SendAsync(request);
+            return SendAsync(request);
         }
 
         public Task<HttpResponseMessage> PutAsync<T>(string url, T body, NameValueCollection headers = null)
         {
             var request = CreateNewRequest(HttpMethod.Put, url, headers, body);
-            return _client.SendAsync(request);
+            return SendAsync(request);
         }
 
         public Task<HttpResponseMessage> DeleteAsync(string url, NameValueCollection headers = null)
         {
             var request = CreateNewRequest(HttpMethod.Delete, url, headers);
+            return SendAsync(request);
+        }
+
+        public Task<HttpResponseMessage> SendAsync(HttpRequestMessage request)
+        {
             return _client.SendAsync(request);
         }
 

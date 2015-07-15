@@ -11,5 +11,6 @@
         Task<HttpResponseMessage> PostAsync<T>(string url, T body, NameValueCollection headers = null);
         Task<HttpResponseMessage> PutAsync<T>(string url, T body, NameValueCollection headers = null);
         Task<HttpResponseMessage> DeleteAsync(string url, NameValueCollection headers = null);
+        Task<HttpResponseMessage> SendAsync(HttpRequestMessage request);
     }
 }
