@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Simple JSON HTTP client")]
-[assembly: AssemblyDescription("A simple and testable HTTP client.")]
+[assembly: AssemblyTitle("GuaranteedRate.Net.Http.Security")]
+[assembly: AssemblyDescription("Simple framework for adding authentication and authorization to controllers")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Guaranteed Rate")]
-[assembly: AssemblyProduct("Simple JSON HTTP client")]
+[assembly: AssemblyProduct("GuaranteedRate.Net.Http.Security")]
 [assembly: AssemblyCopyright("Copyright © Guaranteed Rate 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,17 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("21024317-575e-4735-bf4f-df7f859bb2f8")]
+[assembly: Guid("d69ab6b3-58b9-492f-abb8-afa858835ece")]
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1")]
-[assembly: AssemblyFileVersion("1.0.1")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

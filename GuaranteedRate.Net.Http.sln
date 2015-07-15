@@ -11,7 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C369ED12
 	ProjectSection(SolutionItems) = preProject
 		HttpService\HttpService.nuspec = HttpService\HttpService.nuspec
 		HttpService\HttpServicePublish.bat = HttpService\HttpServicePublish.bat
+		Security\Security.nuspec = Security\Security.nuspec
+		Security\SecurityPublish.bat = Security\SecurityPublish.bat
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{EE01EE03-5D43-4ADB-B69E-19102426C3FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +27,16 @@ Global
 		{0A9C1897-F948-42B1-9347-BCD07C9F526A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A9C1897-F948-42B1-9347-BCD07C9F526A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A9C1897-F948-42B1-9347-BCD07C9F526A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE01EE03-5D43-4ADB-B69E-19102426C3FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE01EE03-5D43-4ADB-B69E-19102426C3FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE01EE03-5D43-4ADB-B69E-19102426C3FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE01EE03-5D43-4ADB-B69E-19102426C3FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0A9C1897-F948-42B1-9347-BCD07C9F526A} = {F3F94D3B-AFE4-4771-934E-0FC041EA89DE}
+		{EE01EE03-5D43-4ADB-B69E-19102426C3FD} = {F3F94D3B-AFE4-4771-934E-0FC041EA89DE}
 	EndGlobalSection
 EndGlobal
