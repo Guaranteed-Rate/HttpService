@@ -9,17 +9,19 @@ namespace GuaranteedRate.Net.Http.HttpService
 
     public class HttpClient : IHttpClient
     {
-        private readonly string _baseUrl;
         private readonly System.Net.Http.HttpClient _client;
+        public readonly string BaseUrl;
         protected readonly NameValueCollection DefaultRequestHeaders;
 
         public HttpClient(string baseUrl = null, NameValueCollection defaultRequestHeaders = null)
         {
             DefaultRequestHeaders = defaultRequestHeaders ?? new NameValueCollection();
-            if (DefaultRequestHeaders.AllKeys.All(key => !key.Equals("Content-Type", StringComparison.InvariantCultureIgnoreCase)))
+            if (
+                DefaultRequestHeaders.AllKeys.All(
+                    key => !key.Equals("Content-Type", StringComparison.InvariantCultureIgnoreCase)))
                 DefaultRequestHeaders.Add("Content-Type", "application/json");
             _client = new System.Net.Http.HttpClient();
-            _baseUrl = baseUrl ?? string.Empty;
+            BaseUrl = baseUrl ?? string.Empty;
         }
 
         public void Dispose()
@@ -60,11 +62,12 @@ namespace GuaranteedRate.Net.Http.HttpService
         private HttpRequestMessage CreateNewRequest(HttpMethod httpMethod, string url, NameValueCollection headers)
         {
             url = url ?? string.Empty;
-            var request = new HttpRequestMessage { Method = httpMethod, RequestUri = new Uri(_baseUrl + url) };
+            var request = new HttpRequestMessage {Method = httpMethod, RequestUri = new Uri(BaseUrl + url)};
             return request.AppendHeaders(DefaultRequestHeaders, headers);
         }
 
-        private HttpRequestMessage CreateNewRequest<T>(HttpMethod httpMethod, string url, NameValueCollection headers, T body)
+        private HttpRequestMessage CreateNewRequest<T>(HttpMethod httpMethod, string url, NameValueCollection headers,
+            T body)
         {
             var request = CreateNewRequest(httpMethod, url, headers);
             if (body != null)
