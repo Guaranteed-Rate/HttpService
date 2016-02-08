@@ -12,8 +12,9 @@ namespace GuaranteedRate.Net.Http.HttpService
         private readonly System.Net.Http.HttpClient _client;
         public readonly string BaseUrl;
         protected readonly NameValueCollection DefaultRequestHeaders;
+        private readonly JsonMediaTypeFormatter _formatter;
 
-        public HttpClient(string baseUrl = null, NameValueCollection defaultRequestHeaders = null)
+        public HttpClient(string baseUrl = null, NameValueCollection defaultRequestHeaders = null, JsonMediaTypeFormatter formatter = null)
         {
             DefaultRequestHeaders = defaultRequestHeaders ?? new NameValueCollection();
             if (
@@ -22,6 +23,7 @@ namespace GuaranteedRate.Net.Http.HttpService
                 DefaultRequestHeaders.Add("Content-Type", "application/json");
             _client = new System.Net.Http.HttpClient();
             BaseUrl = baseUrl ?? string.Empty;
+            _formatter = formatter ?? new JsonMediaTypeFormatter();
         }
 
         public void Dispose()
@@ -71,7 +73,7 @@ namespace GuaranteedRate.Net.Http.HttpService
         {
             var request = CreateNewRequest(httpMethod, url, headers);
             if (body != null)
-                request.Content = new ObjectContent<T>(body, new JsonMediaTypeFormatter());
+                request.Content = new ObjectContent<T>(body, _formatter);
             return request;
         }
     }
