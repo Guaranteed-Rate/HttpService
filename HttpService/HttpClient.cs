@@ -16,7 +16,10 @@ namespace GuaranteedRate.Net.Http.HttpService
 
         public HttpClient(string baseUrl = null, NameValueCollection defaultRequestHeaders = null, JsonMediaTypeFormatter formatter = null)
         {
-            DefaultRequestHeaders = defaultRequestHeaders ?? new NameValueCollection();
+            DefaultRequestHeaders = defaultRequestHeaders == null
+                ? new NameValueCollection()
+                : new NameValueCollection(defaultRequestHeaders);
+
             if (
                 DefaultRequestHeaders.AllKeys.All(
                     key => !key.Equals("Content-Type", StringComparison.InvariantCultureIgnoreCase)))
